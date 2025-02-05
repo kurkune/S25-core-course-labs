@@ -46,8 +46,36 @@ Jinja2==3.1.3
 MarkupSafe==2.1.5
 Werkzeug==3.0.1
 
-## Testing
-Manual testing can be performed by accessing the web application in a browser and verifying that the displayed time updates upon page refresh.
+## Unit Tests
 
-## Maintainers
+You can find a description of unit tests for the application. in the `PYTHON.md`
+file.
+
+To run the tests, use the following command in the `app_python` directory:
+```pytest```
+
+## CI Pipeline
+
+I use GitHub Actions to automate the building, testing, linting and Docker image deployment processes. 
+
+1. **Dependencies**
+    - Check out the code from the repository and set up Python environment.
+    - Install project dependencies.
+
+2. **Linter**
+    - Use Flake8 to lint the code.
+
+3. **Tests**
+    - Run unit tests with `pytest`.
+
+4. **Vulnerability checks**
+    - Use Snyk for Vulnerability checks.
+
+5. **Docker Integration**
+    - Build a Docker image.
+    - Push the Docker image to Docker Hub.
+
+
+
+## Maintainer
 Alexandra Egorova
