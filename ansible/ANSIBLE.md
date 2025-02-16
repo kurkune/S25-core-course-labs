@@ -28,8 +28,10 @@ This Ansible configuration file (ansible.cfg) sets default parameters. It specif
 inventory, and roles. Additionally, it defines default user and SSH key settings, simplifying configuration across
 playbooks.
 
-## Result of the `ansible-playbook ansible/playbooks/dev/main.yml --diff`
-```markdown
+# Lab 5
+
+## Output for docker role
+```
 PLAY [all] *********************************************************************
 
 TASK [Gathering Facts] *********************************************************
@@ -52,8 +54,8 @@ PLAY RECAP *********************************************************************
 host1                      : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
 ```
 
-## Result of the ` ansible-inventory -i ansible/inventory/yandex_cloud.yml --list`
-```markdown
+## Inventory details
+```
 {
     "_meta": {
         "hostvars": {
@@ -74,4 +76,36 @@ host1                      : ok=5    changed=4    unreachable=0    failed=0    s
         ]
     }
 }
+```
+
+# Lab 6
+## Output for docker and web_app role
+```
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+Enter passphrase for key '/home/sandra/.ssh/id_ed25519': 
+Enter passphrase for key '/home/sandra/.ssh/id_ed25519': 
+ok: [host1]
+
+TASK [docker : Apt update] *****************************************************
+ok: [host1]
+
+TASK [docker : Installation of python3 and pip3] *******************************
+ok: [host1]
+
+TASK [docker : Installation of docker] *****************************************
+ok: [host1]
+
+TASK [docker : Installation of docker-compose] *********************************
+ok: [host1]
+
+TASK [web_app : Docker image pulling] ******************************************
+changed: [host1]
+
+TASK [web_app : Docker container running] **************************************
+changed: [host1]
+
+PLAY RECAP *********************************************************************
+host1                      : ok=7    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
