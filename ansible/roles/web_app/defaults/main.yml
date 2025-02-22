@@ -1,4 +1,4 @@
-docker_image: kurkune/myapp
+docker_image: kurkune/app_python
 docker_image_tag: latest
 docker_container_name: app
 docker_container_port: 5000

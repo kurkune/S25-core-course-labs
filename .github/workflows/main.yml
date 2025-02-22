@@ -60,7 +60,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           cd app_python
-          docker build -t kurkune/myapp:latest .
-          docker push kurkune/myapp:latest
+          docker build -t kurkune/app_python:latest .
+          docker push kurkune/app_python:latest
 
 
